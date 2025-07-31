@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sustainability Survey Questionnaire - Share your environmental perspectives">
+    <meta name="author" content="CQU Student">
+    <title>Sustainability Survey Questionnaire</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sustainability Survey</h1>
+            <p class="survey-subtitle">Your Voice Matters for Environmental Change</p>
+        </header>
+
+        <main>
+            <form id="sustainabilityForm" novalidate>
+                <!-- Participant Information Section -->
+                <fieldset class="participant-info">
+                    <legend>Participant Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State <span class="required">*</span></label>
+                        <select id="state" name="state" required>
+                            <option value="">Please select your state</option>
+                            <option value="NSW">New South Wales</option>
+                            <option value="QLD">Queensland</option>
+                            <option value="VIC">Victoria</option>
+                            <option value="SA">South Australia</option>
+                            <option value="WA">Western Australia</option>
+                            <option value="TAS">Tasmania</option>
+                            <option value="NT">Northern Territory</option>
+                            <option value="ACT">Australian Capital Territory</option>
+                        </select>
+                        <span class="error-message" id="stateError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Phone <span class="required">*</span></label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="04XX XXX XXX" required>
+                        <span class="error-message" id="mobileError"></span>
+                    </div>
+                </fieldset>
+
+                <!-- Survey Questions -->
+                <fieldset class="survey-questions">
+                    <legend>Survey Questions</legend>
+
+                    <!-- Question 1: Age Group (Radio buttons) -->
+                    <div class="form-group">
+                        <label class="question-label">1. What is your age group?</label>
+                        <div class="radio-group inline">
+                            <label for="age18-25">
+                                <input type="radio" id="age18-25" name="ageGroup" value="18-25">
+                                18-25
+                            </label>
+                            
+                            <label for="age26-35">
+                                <input type="radio" id="age26-35" name="ageGroup" value="26-35">
+                                26-35
+                            </label>
+                            
+                            <label for="age36-45">
+                                <input type="radio" id="age36-45" name="ageGroup" value="36-45">
+                                36-45
+                            </label>
+                            
+                            <label for="age46-55">
+                                <input type="radio" id="age46-55" name="ageGroup" value="46-55">
+                                46-55
+                            </label>
+                            
+                            <label for="age55plus">
+                                <input type="radio" id="age55plus" name="ageGroup" value="55+">
+                                55+
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2: Environmental Concerns (Checkboxes) -->
+                    <div class="form-group">
+                        <label class="question-label">2. Which environmental issues concern you most? (Select all that apply)</label>
+                        <div class="checkbox-group multi-column">
+                            <label for="climateChange">
+                                <input type="checkbox" id="climateChange" name="concerns" value="Climate change">
+                                Climate change
+                            </label>
+                            
+                            <label for="plasticPollution">
+                                <input type="checkbox" id="plasticPollution" name="concerns" value="Plastic pollution">
+                                Plastic pollution
+                            </label>
+                            
+                            <label for="deforestation">
+                                <input type="checkbox" id="deforestation" name="concerns" value="Deforestation">
+                                Deforestation
+                            </label>
+                            
+                            <label for="waterScarcity">
+                                <input type="checkbox" id="waterScarcity" name="concerns" value="Water scarcity">
+                                Water scarcity
+                            </label>
+                            
+                            <label for="airPollution">
+                                <input type="checkbox" id="airPollution" name="concerns" value="Air pollution">
+                                Air pollution
+                            </label>
+                            
+                            <label for="biodiversityLoss">
+                                <input type="checkbox" id="biodiversityLoss" name="concerns" value="Biodiversity loss">
+                                Biodiversity loss
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3: Knowledge Level (Dropdown) -->
+                    <div class="form-group">
+                        <label for="knowledgeLevel">3. How would you rate your knowledge of sustainability practices?</label>
+                        <select id="knowledgeLevel" name="knowledgeLevel">
+                            <option value="">Please select</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                            <option value="Expert">Expert</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 4: Daily Practices (Checkboxes) -->
+                    <div class="form-group">
+                        <label class="question-label">4. Which sustainable practices do you currently follow? (Select all that apply)</label>
+                        <div class="checkbox-group multi-column">
+                            <label for="recycling">
+                                <input type="checkbox" id="recycling" name="practices" value="Recycling">
+                                Recycling
+                            </label>
+                            
+                            <label for="reusableBags">
+                                <input type="checkbox" id="reusableBags" name="practices" value="Using reusable bags">
+                                Using reusable bags
+                            </label>
+                            
+                            <label for="walkingCycling">
+                                <input type="checkbox" id="walkingCycling" name="practices" value="Walking/cycling">
+                                Walking/cycling instead of driving
+                            </label>
+                            
+                            <label for="energyEfficient">
+                                <input type="checkbox" id="energyEfficient" name="practices" value="Energy-efficient appliances">
+                                Using energy-efficient appliances
+                            </label>
+                            
+                            <label for="composting">
+                                <input type="checkbox" id="composting" name="practices" value="Composting">
+                                Composting organic waste
+                            </label>
+                            
+                            <label for="waterConservation">
+                                <input type="checkbox" id="waterConservation" name="practices" value="Water conservation">
+                                Water conservation techniques
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5: Information Source (Radio buttons) -->
+                    <div class="form-group">
+                        <label class="question-label">5. What is your primary source of environmental information?</label>
+                        <div class="radio-group">
+                            <label for="socialMedia">
+                                <input type="radio" id="socialMedia" name="infoSource" value="Social media">
+                                Social media
+                            </label>
+                            
+                            <label for="newsWebsites">
+                                <input type="radio" id="newsWebsites" name="infoSource" value="News websites">
+                                News websites
+                            </label>
+                            
+                            <label for="scientificJournals">
+                                <input type="radio" id="scientificJournals" name="infoSource" value="Scientific journals">
+                                Scientific journals
+                            </label>
+                            
+                            <label for="govReports">
+                                <input type="radio" id="govReports" name="infoSource" value="Government reports">
+                                Government reports
+                            </label>
+                            
+                            <label for="friendsFamily">
+                                <input type="radio" id="friendsFamily" name="infoSource" value="Friends/family">
+                                Friends and family
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 6: Energy Source (Dropdown) -->
+                    <div class="form-group">
+                        <label for="energySource">6. What is your household's primary energy source?</label>
+                        <select id="energySource" name="energySource">
+                            <option value="">Please select</option>
+                            <option value="Solar power">Solar power</option>
+                            <option value="Natural gas">Natural gas</option>
+                            <option value="Electricity (grid)">Electricity (grid)</option>
+                            <option value="Hybrid system">Hybrid system</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 7: Transportation (Radio buttons) -->
+                    <div class="form-group">
+                        <label class="question-label">7. What is your primary mode of transportation?</label>
+                        <div class="radio-group">
+                            <label for="publicTransport">
+                                <input type="radio" id="publicTransport" name="transportation" value="Public transport">
+                                Public transport
+                            </label>
+                            
+                            <label for="privateVehicle">
+                                <input type="radio" id="privateVehicle" name="transportation" value="Private vehicle">
+                                Private vehicle
+                            </label>
+                            
+                            <label for="walkCycle">
+                                <input type="radio" id="walkCycle" name="transportation" value="Walking/cycling">
+                                Walking/cycling
+                            </label>
+                            
+                            <label for="combination">
+                                <input type="radio" id="combination" name="transportation" value="Combination">
+                                Combination of methods
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 8: Sustainable Products (Dropdown) -->
+                    <div class="form-group">
+                        <label for="sustainableProducts">8. How often do you choose sustainable/eco-friendly products?</label>
+                        <select id="sustainableProducts" name="sustainableProducts">
+                            <option value="">Please select</option>
+                            <option value="Always">Always</option>
+                            <option value="Often">Often</option>
+                            <option value="Sometimes">Sometimes</option>
+                            <option value="Rarely">Rarely</option>
+                            <option value="Never">Never</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 9: Barriers (Checkboxes) -->
+                    <div class="form-group">
+                        <label class="question-label">9. What are the main barriers to sustainable living for you? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label for="cost">
+                                <input type="checkbox" id="cost" name="barriers" value="Cost">
+                                Cost
+                            </label>
+                            
+                            <label for="lackInfo">
+                                <input type="checkbox" id="lackInfo" name="barriers" value="Lack of information">
+                                Lack of information
+                            </label>
+                            
+                            <label for="inconvenience">
+                                <input type="checkbox" id="inconvenience" name="barriers" value="Inconvenience">
+                                Inconvenience
+                            </label>
+                            
+                            <label for="limitedOptions">
+                                <input type="checkbox" id="limitedOptions" name="barriers" value="Limited options">
+                                Limited options available
+                            </label>
+                            
+                            <label for="timeConstraints">
+                                <input type="checkbox" id="timeConstraints" name="barriers" value="Time constraints">
+                                Time constraints
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 10: Environmental Impact (Radio buttons) -->
+                    <div class="form-group">
+                        <label class="question-label">10. How concerned are you about your environmental impact?</label>
+                        <div class="radio-group">
+                            <label for="veryConcerned">
+                                <input type="radio" id="veryConcerned" name="impactConcern" value="Very concerned">
+                                Very concerned
+                            </label>
+                            
+                            <label for="somewhatConcerned">
+                                <input type="radio" id="somewhatConcerned" name="impactConcern" value="Somewhat concerned">
+                                Somewhat concerned
+                            </label>
+                            
+                            <label for="neutral">
+                                <input type="radio" id="neutral" name="impactConcern" value="Neutral">
+                                Neutral
+                            </label>
+                            
+                            <label for="notVeryConcerned">
+                                <input type="radio" id="notVeryConcerned" name="impactConcern" value="Not very concerned">
+                                Not very concerned
+                            </label>
+                            
+                            <label for="notConcerned">
+                                <input type="radio" id="notConcerned" name="impactConcern" value="Not concerned">
+                                Not concerned at all
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 11: Sustainable Fashion (Dropdown) -->
+                    <div class="form-group">
+                        <label for="sustainableFashion">11. How often do you consider sustainability when buying clothing?</label>
+                        <select id="sustainableFashion" name="sustainableFashion">
+                            <option value="">Please select</option>
+                            <option value="Always buy sustainable">Always buy sustainable</option>
+                            <option value="Often choose sustainable">Often choose sustainable</option>
+                            <option value="Sometimes consider">Sometimes consider sustainability</option>
+                            <option value="Rarely think about it">Rarely think about it</option>
+                            <option value="Never consider">Never consider sustainability</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 12: Renewable Energy (Radio buttons) -->
+                    <div class="form-group">
+                        <label class="question-label">12. How do you feel about government investment in renewable energy?</label>
+                        <div class="radio-group">
+                            <label for="stronglySupport">
+                                <input type="radio" id="stronglySupport" name="renewableSupport" value="Strongly support">
+                                Strongly support
+                            </label>
+                            
+                            <label for="support">
+                                <input type="radio" id="support" name="renewableSupport" value="Support">
+                                Support
+                            </label>
+                            
+                            <label for="neutralRenewable">
+                                <input type="radio" id="neutralRenewable" name="renewableSupport" value="Neutral">
+                                Neutral
+                            </label>
+                            
+                            <label for="oppose">
+                                <input type="radio" id="oppose" name="renewableSupport" value="Oppose">
+                                Oppose
+                            </label>
+                            
+                            <label for="stronglyOppose">
+                                <input type="radio" id="stronglyOppose" name="renewableSupport" value="Strongly oppose">
+                                Strongly oppose
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 13: Waste Reduction (Checkboxes) -->
+                    <div class="form-group">
+                        <label class="question-label">13. Which waste reduction practices do you follow? (Select all that apply)</label>
+                        <div class="checkbox-group multi-column">
+                            <label for="minimizePackaging">
+                                <input type="checkbox" id="minimizePackaging" name="wasteReduction" value="Minimize packaging">
+                                Choose products with minimal packaging
+                            </label>
+                            
+                            <label for="buyBulk">
+                                <input type="checkbox" id="buyBulk" name="wasteReduction" value="Buy in bulk">
+                                Buy in bulk to reduce packaging
+                            </label>
+                            
+                            <label for="repairReplace">
+                                <input type="checkbox" id="repairReplace" name="wasteReduction" value="Repair instead of replace">
+                                Repair items instead of replacing
+                            </label>
+                            
+                            <label for="shareBorrow">
+                                <input type="checkbox" id="shareBorrow" name="wasteReduction" value="Share/borrow items">
+                                Share or borrow items when possible
+                            </label>
+                            
+                            <label for="digitalReceipts">
+                                <input type="checkbox" id="digitalReceipts" name="wasteReduction" value="Digital receipts">
+                                Request digital receipts
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 14: Future Goals (Dropdown) -->
+                    <div class="form-group">
+                        <label for="futureGoals">14. What is your primary sustainability goal for the next year?</label>
+                        <select id="futureGoals" name="futureGoals">
+                            <option value="">Please select</option>
+                            <option value="Carbon neutral lifestyle">Achieve carbon neutral lifestyle</option>
+                            <option value="Reduce waste by 50%">Reduce household waste by 50%</option>
+                            <option value="Install renewable energy">Install renewable energy system</option>
+                            <option value="Sustainable transport only">Use only sustainable transport</option>
+                            <option value="Educate others">Educate others about sustainability</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 15: Additional Comments (Textarea) -->
+                    <div class="form-group">
+                        <label for="additionalComments">15. Do you have any additional thoughts on sustainability practices or suggestions for promoting environmental awareness in your community?</label>
+                        <textarea id="additionalComments" name="additionalComments" rows="4" placeholder="Share your thoughts, experiences, or suggestions..."></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Submit Survey</button>
+                </div>
+            </form>
+
+            <!-- Results Display Section (Hidden initially) -->
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <h2>Your Survey Response</h2>
+                <p class="success-message">Thank you for participating in our sustainability survey! Your responses are valuable for our research.</p>
+                <div id="resultsDisplay" class="results-display"></div>
+                <div class="thank-you">
+                    <h3>Thank you for taking the time to complete our survey!</h3>
+                    <p>Your input helps us understand community perspectives on sustainability and will contribute to developing better environmental programs and policies.</p>
+                    <a href="index.html" class="back-home-btn">Return to Home</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
